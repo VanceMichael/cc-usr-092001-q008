@@ -1,0 +1,19 @@
+{
+  "event_id": "EV-RULE-WL-2028",
+  "subject_ref": "RULE-WL",
+  "fact_type": "discipline_rule",
+  "occurred_at": "2026-01-01T00:00:00+08:00",
+  "source": "RULES",
+  "source_sequence": 2,
+  "payload": {
+    "rule_id": "RULE-WL",
+    "version": "2028",
+    "discipline": "weightlifting",
+    "event_code": null,
+    "effective_from": "2026-01-01T00:00:00+08:00",
+    "body": {
+      "event_codes": ["WL_M61", "WL_M73", "WL_M89", "WL_M102"],
+      "consecutive": { "min_gap_days": 3, "load_window_days": 7, "load_avg_threshold": 80 }
+    }
+  }
+}

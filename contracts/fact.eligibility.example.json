@@ -1,0 +1,15 @@
+{
+  "event_id": "EV-REG-2026-0007",
+  "subject_ref": "A-FAN",
+  "fact_type": "athlete_eligibility",
+  "occurred_at": "2026-09-01T09:00:00+08:00",
+  "source": "REGISTRY",
+  "source_sequence": 7,
+  "payload_digest": "",
+  "payload": {
+    "display_ref": "选手F",
+    "gender": "male",
+    "eligibility": "eligible",
+    "eligible_for": ["TT_MS", "TT_XD", "TT_MD"]
+  }
+}
