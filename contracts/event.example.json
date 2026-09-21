@@ -1,8 +1,18 @@
 {
-  "schema_version": "1",
+  "schema_version": "2",
   "event_id": "EVENT-008-DEMO",
-  "subject_ref": "SUBJECT-008-DEMO",
-  "occurred_at": "2026-09-19T09:30:00+08:00",
+  "event_type": "decision.recorded",
+  "subject_ref": "ROSTER-AG-WL-A-DEMO",
+  "occurred_at": "2026-08-22T10:30:00+08:00",
+  "source": "decision-desk",
   "source_sequence": 1,
-  "payload_digest": "sha256:demo"
+  "payload_digest": "sha256:由接收方按规范序列化重算，发送方可留空",
+  "payload": {
+    "roster_id": "ROSTER-AG-WL-A-DEMO",
+    "action": "approve",
+    "decided_by": "USER-director-demo",
+    "decided_at": "2026-08-22T10:30:00+08:00",
+    "rationale": "示例：席位、伤病与赛历无阻断项，连续作战风险已知悉并由科医组监控。",
+    "acknowledged_warning_codes": ["CONSECUTIVE_COMPETITION"]
+  }
 }

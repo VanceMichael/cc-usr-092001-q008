@@ -2,6 +2,10 @@
 *.key
 *.pem
 node_modules/
+data/
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
 .venv/
 venv/
 dist/

@@ -1,11 +1,7 @@
-import fs from "node:fs";
-import path from "node:path";
-import { DatabaseSync } from "node:sqlite";
+import { openDatabase } from "../src/db.js";
 
-const databasePath = process.env.DATABASE_PATH ?? path.join(process.cwd(), "data", "app.sqlite3");
-fs.mkdirSync(path.dirname(databasePath), { recursive: true });
-const database = new DatabaseSync(databasePath);
-database.exec("CREATE TABLE IF NOT EXISTS service_meta (key TEXT PRIMARY KEY, value TEXT NOT NULL)");
-database.prepare("INSERT OR IGNORE INTO service_meta(key, value) VALUES(?, ?)").run("schema_version", "1");
-database.close();
-console.log(`数据库初始化完成：${databasePath}`);
+const databasePath = process.env.DATABASE_PATH ?? new URL("../data/app.sqlite3", import.meta.url).pathname;
+const db = openDatabase(databasePath);
+const version = db.prepare("SELECT value FROM service_meta WHERE key = 'schema_version'").get().value;
+db.close();
+console.log(`数据库初始化完成：${databasePath}（schema_version=${version}）`);
